@@ -1,10 +1,21 @@
+# eureka:
+#   instance:
+#     hostname: localhost
+#   client:
+#     register-with-eureka: false
+#     fetch-registry: false
+#     service-url:
+#       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+# server:
+#   port: 8761
+
 eureka:
   instance:
-    hostname: localhost
+    hostname: ${RAILWAY_STATIC_URL}
   client:
     register-with-eureka: false
     fetch-registry: false
     service-url:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: ${RAILWAY_STATIC_URL}:${PORT}/eureka/
 server:
-  port: 8761
+  port: ${PORT}
